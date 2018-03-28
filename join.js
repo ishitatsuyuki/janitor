@@ -88,7 +88,7 @@ const oauth2Tokens = {};
 
 // Assign a stable session to all requests.
 function ensureSession (request, response, next) {
-  sessions.get(request, (error, session, token) => {
+  sessions.get(request, response, (error, session, token) => {
     if (error || !session || !session.id) {
       log('[fail] session:', session, error);
       response.statusCode = 500; // Internal Server Error

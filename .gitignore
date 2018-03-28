@@ -4,6 +4,9 @@ Thumbs.db
 npm-debug.log
 node_modules
 package-lock.json
+.nuxt
+dist
+sw.*
 
 db.json
 docker.ca

@@ -184,7 +184,7 @@ main {
   margin: auto;
 }
 
-section:not(:last-child) {
+section:not(:last-child):not(.tabs-component-panel) {
   padding-bottom: 2em;
   margin-bottom: 2em;
   border-bottom: 1px solid #ededf0;
@@ -496,30 +496,30 @@ textarea.form-control {
 
 /* Tabs */
 
-.tab-nav, .tab-nav li {
+.tabs-component-tabs, .tabs-component-tab {
   list-style: none;
   margin: 0;
 }
 
-.tab-nav {
+.tabs-component-tabs {
   padding: 0 1em;
 }
 
-.tab-nav li {
+.tabs-component-tab {
   display: inline-block;
   margin: 0 1em;
   padding: 0;
 }
 
-.tab-nav li:first-child {
+.tabs-component-tabs li:first-child {
   margin-left: 0;
 }
 
-.tab-nav li:last-child {
+.tabs-component-tabs li:last-child {
   margin-right: 0;
 }
 
-.tab-nav li a {
+.tabs-component-tab-a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
@@ -531,7 +531,7 @@ textarea.form-control {
   vertical-align: bottom;
 }
 
-.tab-nav li a::after {
+.tabs-component-tab-a::after {
   content: "";
   transition: transform 1s cubic-bezier(.07,.95,0,1);
   transform: scale(0);
@@ -544,11 +544,11 @@ textarea.form-control {
   left: 0;
 }
 
-.tab-nav li.selected a {
+.tabs-component-tab.is-active a {
   color: #0a84ff;
 }
 
-.tab-nav li.selected a::after {
+.tabs-component-tab.is-active a::after {
   transform: none;
 }
 
@@ -567,14 +567,10 @@ textarea.form-control {
   margin-bottom: -1px;
 }
 
-.tab-panel iframe {
+.tabs-component iframe {
   width: 100%;
   height: 100%;
   border: none;
-}
-
-.tab-panels .tab-panel:not(.selected) {
-  display: none;
 }
 
 /* Panels */
@@ -676,32 +672,6 @@ textarea.form-control {
   background: #ff9400;
 }
 
-/* Editable labels */
-
-.editable-value > * {
-  margin: 0;
-  vertical-align: middle;
-  display: inline-block;
-}
-
-.editable-label:not(.editing) .editable-editor,
-.editable-label.editing .editable-value {
-  display: none;
-}
-
-.editable-editor {
-  width: 100%;
-  display: flex;
-}
-
-.editable-editor > input {
-  flex: 1;
-}
-
-.editable-toggle {
-  margin-left: 10px;
-  cursor: pointer;
-}
 
 /* Alerts */
 
@@ -748,19 +718,19 @@ textarea.form-control {
 }
 
 .icon.edit::before {
-  background-image: url(../../assets/img/icons/edit.svg);
+  background-image: url(../img/icons/edit.svg);
 }
 
 .icon.menu::before {
-  background-image: url(../../assets/img/icons/menu.svg);
+  background-image: url(../img/icons/menu.svg);
 }
 
 .icon.link::before {
-  background-image: url(../../assets/img/icons/link.svg);
+  background-image: url(../img/icons/link.svg);
 }
 
 .icon.warning::before {
-  background-image: url(../../assets/img/icons/warning.svg);
+  background-image: url(../img/icons/warning.svg);
 }
 
 /* Icon buttons */
@@ -798,9 +768,9 @@ textarea.form-control {
 }
 
 .ajax-form.success .form-control-feedback::before {
-  background-image: url(../../assets/img/icons/check.svg);
+  background-image: url(~/img/icons/check.svg);
 }
 
 .ajax-form.error .form-control-feedback::before {
-  background-image: url(../../assets/img/icons/error.svg);
+  background-image: url(~/img/icons/error.svg);
 }
